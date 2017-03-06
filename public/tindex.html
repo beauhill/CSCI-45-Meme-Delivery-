@@ -171,9 +171,20 @@
 
               <div class="row">
 
+
+                    <script src="http://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+                    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+                    <script src="/socket.io/socket.io.js"></script>
+
                    <div id="s" style="padding: 400px;" class="col-lg-9 main-chart">
                    <script src="/socket.io/socket.io.js"></script>
                     <script>
+
+                        <!-- jQuery -->
+
+
+
                           var socket = io();
                           socket.on('liveStream', function(url) {
                             $('#stream').attr('src', url);
@@ -189,17 +200,33 @@
 
 
                           <body class="container">
-                                <h1 class="text-center">Drone Feed
-                                  <small>Powered by PI</small>
-                                </h1>
-                               
-                                <hr>
-                               
-                                <button type="button" id="" class="btn btn-info start" onclick="startStream()">Start Camera</button>
-                               
-                                <div class="row">
-                                  <img src="" id="stream">
-                                </div>
+                                <</style>
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="/socket.io.js"></script>
+<script>
+var socket = io();
+socket.on('liveStream', function(url) {
+$('#stream').attr('src', url);
+$('.start').hide();
+});
+function startStream() {
+socket.emit('start-stream');
+$('.start').hide();
+}
+</script>
+</head>
+<body class="container">
+<h1 class="text-center">My Aquarium
+<small>Powered by PI</small>
+</h1>
+<hr>
+<button type="button" id="" class="btn btn-info start" onclick="startStream()">Start Camera</button>
+<div class="row">
+<img src="" id="stream">
+</div>
                             </div>
 
                   <div class="col-lg-9 main-chart">
