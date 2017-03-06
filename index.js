@@ -1,8 +1,9 @@
-var express = require('express')
-var app = express()
-var path = require('path')
-var server = require('http').createServer();
-var io = require('socket.io')(server);
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var fs = require('fs');
+var path = require('path');
 
 app.use(express.static('public'))
 
