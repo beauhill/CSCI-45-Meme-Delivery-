@@ -37,14 +37,7 @@
 
 <body> 
 
- <style type="text/css">
-  #stream {
-    height: 99%;
-    margin: 0px auto;
-    display: block;
-    margin-top: 20px;
-  }
-  </style>
+
 
 
 
@@ -175,53 +168,37 @@
                     <script src="http://code.jquery.com/jquery.js"></script>
 <!-- Bootstrap JavaScript -->
 
-                   <div id="s" style="padding: 400px;" class="col-lg-9 main-chart">
-                   <script src="/socket.io.js"></script>
-                    <script>
+                   <div id="s" style="" class="col-lg-9 main-chart">
+                          <script src="/socket.io.js"></script>
+                          <body class="container">
+                                
+<!-- jQuery -->
+                          <script src="http://code.jquery.com/jquery.js"></script>
+                          <!-- Bootstrap JavaScript -->
+                          <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+                          <script src="/socket.io.js"></script>
 
-                        <!-- jQuery -->
 
-
-
+                          <script>
                           var socket = io();
                           socket.on('liveStream', function(url) {
-                            $('#stream').attr('src', url);
-                            $('.start').hide();
+                          $('#stream').attr('src', url);
+                          $('.start').hide();
                           });
-                         
                           function startStream() {
-                            socket.emit('start-stream');
-                            $('.start').hide();
+                          socket.emit('start-stream');
+                          $('.start').hide();
                           }
                           </script>
 
 
 
-                          <body class="container">
-                                </style>
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="/socket.io.js"></script>
-<script>
-var socket = io();
-socket.on('liveStream', function(url) {
-$('#stream').attr('src', url);
-$('.start').hide();
-});
-function startStream() {
-socket.emit('start-stream');
-$('.start').hide();
-}
-</script>
-</head>
-</h1>
-<hr>
-<button type="button" id="" class="btn btn-info start" onclick="startStream()">Start Camera</button>
-<div class="rowi">
-<img src="" id="stream">
-</div>
+        <button type="button" id="" class="btn btn-info start" onclick="startStream()">Start Camera</button>
+        <button style="padding-left:10px;" type="button" id="" class="btn btn-info open" onclick="startStream()">Open</button>
+        <button style="padding-left:10px;" type="button" id="" class="btn btn-info close" onclick="startStream()">Close</button>
+        <div class="rowi">
+        <img src="" id="stream">
+        </div>
                             </div>
 
                   <div class="col-lg-9 main-chart">
@@ -330,7 +307,7 @@ $('.start').hide();
 
 </div>
 
- <div class="col-lg-3 ds">
+ <div style ="" class="col-lg-3 ds">
                     <!--COMPLETED ACTIONS DONUTS CHART-->
                         <h3>NOTIFICATIONS</h3>
                                         
