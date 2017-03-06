@@ -1,36 +1,21 @@
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
 var path = require('path');
-
-app.use(express.static('public'))
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + "/public " + "/index.html");
-})
-
-
-app.get('/test', function (req, res) {
-  res.sendFile(__dirname + "/public" + "/tindex.html");
-})
-
-
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
-
-
-
+ 
 var spawn = require('child_process').spawn;
 var proc;
  
+app.use('/', express.static(path.join(__dirname, 'public')));
+ 
 app.use('/', express.static(path.join(__dirname, 'stream')));
- 
- 
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/public' + '/tindex.html');
+});
  
 var sockets = {};
  
@@ -55,7 +40,11 @@ io.on('connection', function(socket) {
   });
  
 });
-
+ 
+http.listen(3000, function() {
+  console.log('listening on *:3000');
+});
+ 
 function stopStreaming() {
   if (Object.keys(sockets).length == 0) {
     app.set('watchingFile', false);
