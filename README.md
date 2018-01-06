@@ -1,3 +1,4 @@
 # meme
 
-csci45 meme delivery backend
+<b> College Class Project: 'Meme' Delivery </b>
+
